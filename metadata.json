@@ -1,0 +1,6 @@
+
+{
+  "name": "HGNICE Real-Time Server",
+  "description": "A high-performance neural prediction engine utilizing HGNICE real-time server architecture.",
+  "requestFramePermissions": []
+}

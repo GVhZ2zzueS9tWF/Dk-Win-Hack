@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HGNICE PRO | Neural Prediction Node</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cyan: #22d3ee;
+      --matrix: #00ff00;
+      --danger: #ef4444;
+      --amber: #f59e0b;
+    }
+    
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .glitch {
+      position: relative;
+    }
+    
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch:hover::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--cyan);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% { clip: rect(31px, 9999px, 94px, 0); }
+      20% { clip: rect(62px, 9999px, 42px, 0); }
+      40% { clip: rect(16px, 9999px, 78px, 0); }
+      60% { clip: rect(43px, 9999px, 11px, 0); }
+      80% { clip: rect(85px, 9999px, 33px, 0); }
+      100% { clip: rect(54px, 9999px, 67px, 0); }
+    }
+
+    .glass-morphism {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--cyan);
+      border-radius: 10px;
+    }
+
+    .scanning-line {
+      width: 100%;
+      height: 2px;
+      background: var(--cyan);
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 15px var(--cyan);
+      animation: scan 3s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.2;
+    }
+
+    @keyframes scan {
+      0% { top: 0; }
+      100% { top: 100%; }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.42.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
